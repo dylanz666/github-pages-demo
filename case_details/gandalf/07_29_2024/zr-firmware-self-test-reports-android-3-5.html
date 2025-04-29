@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Case Detail</title>
+    <style>
+        .lightgreen {
+            background-color: lightgreen;
+        }
+        .back-button {
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background-color: #3498db;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+          background-color: #2980b9;
+        }
+        .icon {
+          margin-right: 5px;
+        }
+        .container {
+          display: flex;
+          justify-content: space-between;
+        }
+        /* 外部容器样式 */
+        .checkbox-container {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+        }
+
+        /* 隐藏原生复选框 */
+        .checkbox-container input[type="checkbox"] {
+          display: none;
+        }
+
+        /* 自定义复选框样式 */
+        .custom-checkbox {
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          border: 2px solid #3498db;
+          border-radius: 3px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* 复选框选中样式 */
+        .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+          background-color: #3498db;
+        }
+
+        /* 复选框内部图标样式 */
+        .custom-checkbox::after {
+          content: "\2713";
+          font-size: 16px;
+          color: white;
+          display: none;
+        }
+
+        /* 复选框选中后内部图标显示 */
+        .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+          display: block;
+        }
+
+        .right-align {
+          text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <a href="#" class="back-button" onclick="goBack()">
+            <i class="icon fas fa-arrow-left"></i>
+            Back
+        </a>
+    </div>
+    <div>
+        <label class="checkbox-container" onclick="filterCurrentRoundAutomatedCases()">
+            <input type="checkbox" id="filterCheckbox">
+            <span class="custom-checkbox"></span>
+            <span>Automated By Current Round</span>
+        </label>
+    </div>
+</div>
+
+<div id="all-case-detail">
+    <table style="width:100%" border="1">
+        <tr>
+            <th>ZR Firmware Self Test Reports (Android)_3.5 - 07/29/2024 - Total: 191 - Automated: 8 - Automation
+                Coverage:
+                4.19%
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table style="width:100%" border="1">
+                    <tr>
+                        <th>index</th>
+                        <th>project</th>
+                        <th>case_name</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363671?projectId=20568">[TBA][Unlicensed
+                            Room][High]Start a test meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363672?projectId=20568">[TBA][Unlicensed
+                            Room][High]Join a meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363674?projectId=20568">[A][R][Audio][High]Check
+                            audio in meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363675?projectId=20568">[A][R][Audio][High]Check
+                            audio in phone call</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363676?projectId=20568">[A][R][Audio][High]Echo
+                            Cancellation ( SAP)</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363677?projectId=20568">[A][R][Audio][High]Advanced
+                            noise suppression</a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363679?projectId=20568">[A][R][Video][High]Chek
+                            video in meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363681?projectId=20568">[A][R][Video][High]PTZ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363682?projectId=20568">[A][R][Video][High]Go
+                            and save Presets</a></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363686?projectId=20568">[A][R][Video][High]USB
+                            camera </a></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338995?projectId=20568">[TBD][Video][High]Smart
+                            Gallery (multiple streams, support maxium X streams, X > = 3)</a></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11339008?projectId=20568">[TBD][Video][High]Smart
+                            Gallery with active speaker</a></td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363680?projectId=20568">[M][Video][High]Multiple
+                            cameras </a></td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363683?projectId=20568">[M][Video][High]Auto
+                            Framing</a></td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363684?projectId=20568">[M][Video][High]Speaker
+                            Focus</a></td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363685?projectId=20568">[M][Video][High]Multi
+                            Focus</a></td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363688?projectId=20568">[M][Face
+                            beauty][High]PZR:Touch Up My Appearance</a></td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363690?projectId=20568">[M][1080P][High]1080P
+                            video (hardware support)</a></td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363692?projectId=20568">[M][Virtual
+                            Background][High]Display an image or video as your background (PZR)</a></td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363694?projectId=20568">[M][Share
+                            - Direct share ][High]Direct share</a></td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363696?projectId=20568">[M][Share
+                            - Airplay][High]AirPlay</a></td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363698?projectId=20568">[Share
+                            - HDMI Share][High]HDMI Share(automatically)</a></td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363699?projectId=20568">[Share
+                            - HDMI Share][High]HDMI Share(manually)</a></td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363700?projectId=20568">[Share
+                            - HDMI Share][High]HDMI cable Disconnect and Connect </a></td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261421?projectId=20568">[BYOD][High]Enter
+                            BYOD mode when pop up BYOD UI</a></td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261422?projectId=20568">[BYOD][High]Enter
+                            BYOD mode when show "Switch to BYOD" button</a></td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261423?projectId=20568">[BYOD][High]Check
+                            camera control, mute and volume control in meeting </a></td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261424?projectId=20568">[BYOD][High]Exit
+                            BYOD mode via data cable </a></td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261425?projectId=20568">[BYOD][High]Exit
+                            BYOD mode via "Switch to Zoom Rooms" button on ZRC</a></td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261426?projectId=20568">[BYOD][High]BYOD
+                            data cable stress test</a></td>
+                    </tr>
+                    <tr>
+                        <td>31</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363702?projectId=20568">[TBA][System
+                            Management][High]System settings</a></td>
+                    </tr>
+                    <tr>
+                        <td>32</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363703?projectId=20568">[TBA][System
+                            Management][High]Check Reboot function</a></td>
+                    </tr>
+                    <tr>
+                        <td>33</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363705?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]Start a Google meeting via meeting ID</a></td>
+                    </tr>
+                    <tr>
+                        <td>34</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363706?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]Enter a pre-scheduled Google meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>35</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363707?projectId=20568">[TBA][M][DGJ
+                            - Google meet web][High]ZR should use one camera in Google meeting when ZR connects multi
+                            cameras</a></td>
+                    </tr>
+                    <tr>
+                        <td>36</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363708?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]ZR should allow camera control if camera supports
+                            PTZ/auto-framing/Speaker focus/multi-focus.</a></td>
+                    </tr>
+                    <tr>
+                        <td>37</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363709?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]Rejoin Google meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>38</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363710?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]Leave Google meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>39</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363711?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]Start a Teams meeting via meeting ID</a></td>
+                    </tr>
+                    <tr>
+                        <td>40</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363712?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]Enter a pre-scheduled Teams meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>41</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363713?projectId=20568">[TBA][M][DGJ
+                            - Teams web client][High]ZR should use one camera in Teams meeting when ZR connects multi
+                            cameras</a></td>
+                    </tr>
+                    <tr>
+                        <td>42</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363714?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]ZR should allow camera control if camera supports
+                            PTZ/auto-framing/Speaker focus/multi-focus.</a></td>
+                    </tr>
+                    <tr>
+                        <td>43</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363715?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]Rejoin Teams meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>44</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363716?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]Leave Teams meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>45</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363718?projectId=20568">[M][Digital
+                            Signage][High]Digital Signage played with "Standard Center" layout</a></td>
+                    </tr>
+                    <tr>
+                        <td>46</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363719?projectId=20568">[M][Digital
+                            Signage][High]Digital Signage played with "Video + Content" layout</a></td>
+                    </tr>
+                    <tr>
+                        <td>47</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363721?projectId=20568">[M][Voice
+                            Command][High]Zoom of Voice Command for ZRT [ZRT ONLY]</a></td>
+                    </tr>
+                    <tr>
+                        <td>48</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363722?projectId=20568">[M][Voice
+                            Command][High]Zoom of Voice Command for ZR+ZRC [ZR+ZRC ONLY]</a></td>
+                    </tr>
+                    <tr>
+                        <td>49</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363724?projectId=20568">[M][LED
+                            status][High]LED status</a></td>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363726?projectId=20568">[M][People
+                            Count][High]Real - time People Count</a></td>
+                    </tr>
+                    <tr>
+                        <td>51</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363727?projectId=20568">[M][People
+                            Count][High]People Count in dashboard </a></td>
+                    </tr>
+                    <tr>
+                        <td>52</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363729?projectId=20568">[M][Display
+                            sensor data][High][Display sensor data]</a></td>
+                    </tr>
+                    <tr>
+                        <td>53</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363731?projectId=20568">[M][Operation
+                            time][High]Idle time </a></td>
+                    </tr>
+                    <tr>
+                        <td>54</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363734?projectId=20568">[M][Multiple
+                            Screens][High][Dual screen]</a></td>
+                    </tr>
+                    <tr>
+                        <td>55</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363736?projectId=20568">[M][Kiosk
+                            / Virtual Receptionist ][High]Check Reception/Workspace entrace UI [ ZRT or ZR device which
+                            supports Touch Screen] </a></td>
+                    </tr>
+                    <tr>
+                        <td>56</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363737?projectId=20568">[M][Kiosk
+                            / Virtual Receptionist ][High]Check Workspace UI [ ZRT or ZR device which supports Touch
+                            Screen] </a></td>
+                    </tr>
+                    <tr>
+                        <td>57</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363738?projectId=20568">[M][Kiosk
+                            / Virtual Receptionist ]Call Receptionist (old) [ ZRT or ZR device which supports Touch
+                            Screen] </a></td>
+                    </tr>
+                    <tr>
+                        <td>58</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363741?projectId=20568">[M][Whiteboard][High]Voice
+                            command should be forbidden when pre-meeting new whiteboard is ongoing [ ZRT or ZR device
+                            which
+                            supports Touch Screen] </a></td>
+                    </tr>
+                    <tr>
+                        <td>59</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363743?projectId=20568">[M][Whiteboard][High]Large
+                            Documents loading[ ZRT or ZR device which supports Touch Screen] </a></td>
+                    </tr>
+                    <tr>
+                        <td>60</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363745?projectId=20568">[M][ZR+ZRC
+                            and ZRT swtich][High]ZR + ZRC and ZRT switch [ ZRT or ZR device which supports Touch
+                            Screen] </a></td>
+                    </tr>
+                    <tr>
+                        <td>61</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363747?projectId=20568">
+                            [Auto
+                            Pair][High]ZRC auto pair to ZR</a></td>
+                    </tr>
+                    <tr>
+                        <td>62</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363749?projectId=20568">[M][Overnight
+                            test][High]Overnight test</a></td>
+                    </tr>
+                    <tr>
+                        <td>63</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363751?projectId=20568">[M][ZDM][High]ZDM
+                            Client Start</a></td>
+                    </tr>
+                    <tr>
+                        <td>64</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363752?projectId=20568">[M][ZDM][High]Device
+                            Manual-Enrollment</a></td>
+                    </tr>
+                    <tr>
+                        <td>65</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363753?projectId=20568">[M][ZDM][High]Device
+                            Auto-Enrollment</a></td>
+                    </tr>
+                    <tr>
+                        <td>66</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363754?projectId=20568">[M][ZDM][High]Upgrade
+                            Firmware & App</a></td>
+                    </tr>
+                    <tr>
+                        <td>67</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363755?projectId=20568">[M][ZDM][High]Assign
+                            Room</a></td>
+                    </tr>
+                    <tr>
+                        <td>68</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363756?projectId=20568">[M][ZDM][High]Release
+                            and Reassign Room </a></td>
+                    </tr>
+                    <tr>
+                        <td>69</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363757?projectId=20568">[M][ZDM][High]Auto-configure
+                            ZDM Domain</a></td>
+                    </tr>
+                    <tr>
+                        <td>70</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363758?projectId=20568">[M][ZDM][High]Report
+                            Sensor Data</a></td>
+                    </tr>
+                    <tr>
+                        <td>71</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363759?projectId=20568">[M][ZDM][High]Download
+                            Log</a></td>
+                    </tr>
+                    <tr>
+                        <td>72</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363760?projectId=20568">[M][ZDM][High]Device
+                            Reboot</a></td>
+                    </tr>
+                    <tr>
+                        <td>73</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363761?projectId=20568">[M][ZDM][High]Set
+                            Proxy</a></td>
+                    </tr>
+                    <tr>
+                        <td>74</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363764?projectId=20568">[M][Device][High]Device
+                            ID</a></td>
+                    </tr>
+                    <tr>
+                        <td>75</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363765?projectId=20568">[Device][High]Show
+                            IP for device's admin portal</a></td>
+                    </tr>
+                    <tr>
+                        <td>76</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363767?projectId=20568">[M][Ultrasound][High]Ultrasonic
+                            proximity for shared ZR [ For ZRC device]</a></td>
+                    </tr>
+                    <tr>
+                        <td>77</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363768?projectId=20568">[M][Ultrasonic][High]Ultrasonic
+                            proximity for PZR [ For ZRC device]</a></td>
+                    </tr>
+                    <tr>
+                        <td>78</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11543403?projectId=20568">[BYOD][High]Enter
+                            BYOD mode when pop up BYOD UI</a></td>
+                    </tr>
+                    <tr>
+                        <td>79</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11543404?projectId=20568">[BYOD][High]Enter
+                            BYOD mode when show "Switch to BYOD" button</a></td>
+                    </tr>
+                    <tr>
+                        <td>80</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11543405?projectId=20568">[BYOD][High]Check
+                            camera control, mute and volume control in meeting </a></td>
+                    </tr>
+                    <tr>
+                        <td>81</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11543406?projectId=20568">[BYOD][High]Exit
+                            BYOD mode via data cable </a></td>
+                    </tr>
+                    <tr>
+                        <td>82</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11543407?projectId=20568">[BYOD][High]Exit
+                            BYOD mode via "Switch to Zoom Rooms" button on ZRC</a></td>
+                    </tr>
+                    <tr>
+                        <td>83</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11543408?projectId=20568">[BYOD][High]BYOD
+                            data cable stress test</a></td>
+                    </tr>
+                    <tr>
+                        <td>84</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363770?projectId=20568">[System
+                            Management][High]Launch System settings</a></td>
+                    </tr>
+                    <tr>
+                        <td>85</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363771?projectId=20568">[System
+                            Management][High]Reboot device</a></td>
+                    </tr>
+                    <tr>
+                        <td>86</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363773?projectId=20568">[LED
+                            status][High]LED for Controller</a></td>
+                    </tr>
+                    <tr>
+                        <td>87</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363775?projectId=20568">[Auto
+                            pair][High]ZRC auto pair to ZR</a></td>
+                    </tr>
+                    <tr>
+                        <td>88</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363777?projectId=20568">[M][Kiosk
+                            (Single App) Mode][High]Kiosk (Single App) Mode</a></td>
+                    </tr>
+                    <tr>
+                        <td>89</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363779?projectId=20568">[TBA][ZDM][High]ZDM
+                            Client Start</a></td>
+                    </tr>
+                    <tr>
+                        <td>90</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363780?projectId=20568">[M][ZDM][High]Device
+                            Manual-Enrollment</a></td>
+                    </tr>
+                    <tr>
+                        <td>91</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363781?projectId=20568">[M][ZDM][High]Device
+                            Auto-Enrollment</a></td>
+                    </tr>
+                    <tr>
+                        <td>92</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363782?projectId=20568">[M][ZDM][High]Upgrade
+                            Firmware & App</a></td>
+                    </tr>
+                    <tr>
+                        <td>93</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363783?projectId=20568">[M][ZDM][High]Assign
+                            Room</a></td>
+                    </tr>
+                    <tr>
+                        <td>94</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363784?projectId=20568">[M][ZDM][High]Release
+                            and Reassign Room </a></td>
+                    </tr>
+                    <tr>
+                        <td>95</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363785?projectId=20568">[TBA][ZDM][High]Auto-configure
+                            ZDM Domain</a></td>
+                    </tr>
+                    <tr>
+                        <td>96</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363786?projectId=20568">[M][ZDM][High]Report
+                            Sensor Data</a></td>
+                    </tr>
+                    <tr>
+                        <td>97</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363787?projectId=20568">[TBA][ZDM][High]Download
+                            Log</a></td>
+                    </tr>
+                    <tr>
+                        <td>98</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363788?projectId=20568">[TBA][ZDM][High]Device
+                            Reboot</a></td>
+                    </tr>
+                    <tr>
+                        <td>99</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363789?projectId=20568">[ZDM][High]Set
+                            Proxy</a></td>
+                    </tr>
+                    <tr>
+                        <td>100</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11366626?projectId=20568">[M]Stress
+                            test for Ultrasonic</a></td>
+                    </tr>
+                    <tr>
+                        <td>101</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261498?projectId=20568">[BYOD][High]ZR
+                            should remain show the "Switch to BYOD" button after end meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261499?projectId=20568">[BYOD][High]Check
+                            ZR status in BYOD mode on web portal</a></td>
+                    </tr>
+                    <tr>
+                        <td>103</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261500?projectId=20568">[BYOD][High]ZRT/ZRC
+                            should show "Switch to BYOD" mode after click "Cancel" button</a></td>
+                    </tr>
+                    <tr>
+                        <td>104</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261501?projectId=20568">[BYOD][High]Can
+                            not enter BYOD mode when ZR in use</a></td>
+                    </tr>
+                    <tr>
+                        <td>105</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261502?projectId=20568">[BYOD][High]ZR
+                            should start HDMI sharing in BYOD mode</a></td>
+                    </tr>
+                    <tr>
+                        <td>106</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261503?projectId=20568">[BYOD][High]ZR
+                            should disable the voice command in BYOD mode</a></td>
+                    </tr>
+                    <tr>
+                        <td>107</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11261504?projectId=20568">[BYOD][High]Both
+                            Windows and Mac can trigger BYOD signal</a></td>
+                    </tr>
+                    <tr>
+                        <td>108</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363792?projectId=20568">[Multi-Camera][Medium]The
+                            camera UI in settings will be same as before when no other cameras connect with ZR</a></td>
+                    </tr>
+                    <tr>
+                        <td>109</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363793?projectId=20568">[Multi-Camera][Medium]The
+                            camera UI in settings and Switch Camera UI in meeting will be same as before when disable
+                            "Allow
+                            Multi-Camera Mode" option</a></td>
+                    </tr>
+                    <tr>
+                        <td>110</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363794?projectId=20568">[Multi-Camera][High]Check
+                            new camera UI in settings when enable "Allow Multi-Camera Mode" option for different
+                            OS/PC</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>111</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363795?projectId=20568">[M][Multi-Camera][Medium]Only
+                            enable two cameras in multi-cameras mode when the OS/PC only supports another two
+                            cameras</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>112</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363796?projectId=20568">[M][Multi-Camera][Medium]Check
+                            the default camera mode for the another three cameras</a></td>
+                    </tr>
+                    <tr>
+                        <td>113</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363797?projectId=20568">[M][Multi-Camera][Medium]Multi-cameras
+                            mode will not be supported in PZR</a></td>
+                    </tr>
+                    <tr>
+                        <td>114</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363798?projectId=20568">[M][Multi-Camera][Medium]Multi-cameras
+                            will be shown in PZR with license</a></td>
+                    </tr>
+                    <tr>
+                        <td>115</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363799?projectId=20568">[Multi-Camera][Medium]Multi-cameras
+                            mode will not be supported when ZR is a unlicensed room</a></td>
+                    </tr>
+                    <tr>
+                        <td>116</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363800?projectId=20568">[Multi-Camera][High]Multi-cameras
+                            mode still works well when the meeting is locked</a></td>
+                    </tr>
+                    <tr>
+                        <td>117</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363801?projectId=20568">[Multi-Camera][High]Check
+                            the videos and participant list when enabling multi cameras</a></td>
+                    </tr>
+                    <tr>
+                        <td>118</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363802?projectId=20568">[M][Multi-Camera][High]Mirror
+                            Effect will only effect one camera</a></td>
+                    </tr>
+                    <tr>
+                        <td>119</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363803?projectId=20568">[M][Multi-Camera][High]Only
+                            main camera video should apply VB</a></td>
+                    </tr>
+                    <tr>
+                        <td>120</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363804?projectId=20568">[Multi-Camera][Medium]Virtual
+                            participant should be ignore when count the number of participant</a></td>
+                    </tr>
+                    <tr>
+                        <td>121</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363805?projectId=20568">[Multi-Camera][Medium]Check
+                            the options of virtual participant when parent participant is host/co-host</a></td>
+                    </tr>
+                    <tr>
+                        <td>122</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363806?projectId=20568">[Multi-Camera][Medium]Check
+                            the options of virtual participant when parent participant is attendee</a></td>
+                    </tr>
+                    <tr>
+                        <td>123</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363807?projectId=20568">[M][Multi-Camera][High]Pin/Unpin
+                            the virtual participant's video of ZR self</a></td>
+                    </tr>
+                    <tr>
+                        <td>124</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363808?projectId=20568">[M][Multi-Camera][High]Spotlight/Cancel
+                            spotlight the virtual participant's video of ZR self</a></td>
+                    </tr>
+                    <tr>
+                        <td>125</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363809?projectId=20568">[Multi-Camera][Medium]Rename
+                            the virtual participant of ZR self</a></td>
+                    </tr>
+                    <tr>
+                        <td>126</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363810?projectId=20568">[M][Multi-Camera][Medium]Rename
+                            option for virtual participant will disappear when host disables participants to rename
+                            themselves</a></td>
+                    </tr>
+                    <tr>
+                        <td>127</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363811?projectId=20568">[M][Multi-Camera][Medium]Pin
+                            option for virtual participant will disappear when the screen is used to share or
+                            spotlighted</a></td>
+                    </tr>
+                    <tr>
+                        <td>128</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363812?projectId=20568">[M][Multi-Camera][Medium]Pin/Unpin
+                            the virtual participant's video of others</a></td>
+                    </tr>
+                    <tr>
+                        <td>129</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363813?projectId=20568">[M][Multi-Camera][Medium]Spotlight/Cancel
+                            spotlight the virtual participant's video of others</a></td>
+                    </tr>
+                    <tr>
+                        <td>130</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363814?projectId=20568">[Multi-Camera][Medium]Rename
+                            the virtual participant of others</a></td>
+                    </tr>
+                    <tr>
+                        <td>131</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363815?projectId=20568">[M][Multi-Camera][Medium]Search
+                            for the virtual participant</a></td>
+                    </tr>
+                    <tr>
+                        <td>132</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363816?projectId=20568">[M][Multi-Camera][Medium]Search
+                            for the parent participant</a></td>
+                    </tr>
+                    <tr>
+                        <td>133</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363817?projectId=20568">[Multi-Camera][Medium]The
+                            virtual participant should not be shown in report-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>134</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363818?projectId=20568">[Multi-Camera][Medium]The
+                            virtual participant should not be shown in remove-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>135</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363819?projectId=20568">[Multi-Camera][Medium]The
+                            virtual participant should not be shown in assign-host list when host leave meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>136</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363820?projectId=20568">[Multi-Camera][Medium]The
+                            virtual participant should not be shown in chat-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>137</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363821?projectId=20568">[M][Multi-Camera][High]Multi-camera
+                            will work well in E2E meeting/webinar meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>138</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363822?projectId=20568">[M][Multi-Camera][Medium]The
+                            virtual participant should not be shown in left-participants list in E2E meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>139</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363823?projectId=20568">[M][Multi-Camera][High]Main
+                            camera should work well when plugging in/out other camera</a></td>
+                    </tr>
+                    <tr>
+                        <td>140</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363824?projectId=20568">[Multi-Camera][High]Auto
+                            enable the main camera when switch to other cameras</a></td>
+                    </tr>
+                    <tr>
+                        <td>141</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363825?projectId=20568">[Multi-Camera][Medium]Multi-cameras
+                            should work well when host ask to start/stop video</a></td>
+                    </tr>
+                    <tr>
+                        <td>142</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363826?projectId=20568">[Multi-Camera][Medium]Watermark
+                            should show correct when switching multi-camera</a></td>
+                    </tr>
+                    <tr>
+                        <td>143</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338876?projectId=20568">[Multi-Stream][High]Multi-Stream
+                            will be shown on Camera Control when device supports multi-stream</a></td>
+                    </tr>
+                    <tr>
+                        <td>144</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338877?projectId=20568">[Multi-Stream][Medium]Multi-Stream
+                            will not be shown on Camera Control when device doesn't support multi-stream</a></td>
+                    </tr>
+                    <tr>
+                        <td>145</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338878?projectId=20568">[Multi-Stream][Medium]Multi-Stream
+                            will not be shown on Camera Control in PZR</a></td>
+                    </tr>
+                    <tr>
+                        <td>146</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338879?projectId=20568">[Multi-Stream][Medium]Multi-Stream
+                            will be shown on Camera Control in EZR with license</a></td>
+                    </tr>
+                    <tr>
+                        <td>147</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338880?projectId=20568">[Multi-Stream][Medium]Multi-Stream
+                            will be default mode when user set the mode on web</a></td>
+                    </tr>
+                    <tr>
+                        <td>148</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338881?projectId=20568">[Multi-Stream][High]Multi-Stream
+                            will be available when the meeting is locked</a></td>
+                    </tr>
+                    <tr>
+                        <td>149</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338882?projectId=20568">[Multi-Stream][Medium]Multi-Stream
+                            will be unavailable when ZR is a unlicensed room.</a></td>
+                    </tr>
+                    <tr>
+                        <td>150</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338883?projectId=20568">[Multi-Stream][Medium]Check
+                            the notification after switching to Multi-Stream</a></td>
+                    </tr>
+                    <tr>
+                        <td>151</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338884?projectId=20568">[Multi-Stream][Medium]No
+                            notification when the default mode is Multi-Stream</a></td>
+                    </tr>
+                    <tr>
+                        <td>152</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338885?projectId=20568">[Multi-Stream][High]Check
+                            the videos and participant list when enabling multi-stream</a></td>
+                    </tr>
+                    <tr>
+                        <td>153</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338886?projectId=20568">[Multi-Stream][High]Mirror
+                            Effect will apply to all parent participant and virtual participants</a></td>
+                    </tr>
+                    <tr>
+                        <td>154</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338887?projectId=20568">[Multi-Stream][Medium]Main
+                            stream video should apply VB</a></td>
+                    </tr>
+                    <tr>
+                        <td>155</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338888?projectId=20568">[Multi-Stream][Medium]Virtual
+                            participant should be ignore when count the number of participant</a></td>
+                    </tr>
+                    <tr>
+                        <td>156</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338889?projectId=20568">[Multi-Stream][Medium]Check
+                            the options of virtual participant when parent participant is host/co-host</a></td>
+                    </tr>
+                    <tr>
+                        <td>157</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338890?projectId=20568">[Multi-Stream][Medium]Check
+                            the options of virtual participant when parent participant is attendee</a></td>
+                    </tr>
+                    <tr>
+                        <td>158</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338891?projectId=20568">[Multi-Stream][High]Pin/Unpin
+                            the virtual participant's video of ZR self</a></td>
+                    </tr>
+                    <tr>
+                        <td>159</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338892?projectId=20568">[Multi-Stream][High]Spotlight/Cancel
+                            spotlight the virtual participant's video of ZR self</a></td>
+                    </tr>
+                    <tr>
+                        <td>160</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338893?projectId=20568">[Multi-Stream][Medium]Rename
+                            the virtual participant of ZR self</a></td>
+                    </tr>
+                    <tr>
+                        <td>161</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338894?projectId=20568">[Multi-Stream][Medium]Rename
+                            option for virtual participant will disappear when host disables participants to rename
+                            themselves</a></td>
+                    </tr>
+                    <tr>
+                        <td>162</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338895?projectId=20568">[Multi-Stream][Medium]Pin
+                            option for virtual participant will disappear when the screen is used to share or
+                            spotlighted.</a></td>
+                    </tr>
+                    <tr>
+                        <td>163</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338896?projectId=20568">[Multi-Stream][Medium]Pin/Unpin
+                            the virtual participant's video of others</a></td>
+                    </tr>
+                    <tr>
+                        <td>164</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338897?projectId=20568">[Multi-Stream][Medium]Spotlight/Cancel
+                            spotlight the virtual participant's video of others</a></td>
+                    </tr>
+                    <tr>
+                        <td>165</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338898?projectId=20568">[Multi-Stream][Medium]Rename
+                            the virtual participant of others</a></td>
+                    </tr>
+                    <tr>
+                        <td>166</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338899?projectId=20568">[Multi-Stream][Medium]Search
+                            for the virtual participant</a></td>
+                    </tr>
+                    <tr>
+                        <td>167</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338900?projectId=20568">[Multi-Stream][Medium]Search
+                            for the parent participant</a></td>
+                    </tr>
+                    <tr>
+                        <td>168</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338901?projectId=20568">[Multi-Stream][Medium]The
+                            virtual participant should not be shown in report-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>169</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338902?projectId=20568">[Multi-Stream][Medium]The
+                            virtual participant should not be shown in remove-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>170</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338903?projectId=20568">[Multi-Stream][Medium]The
+                            virtual participant should not be shown in assign-host list when host leave meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>171</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338904?projectId=20568">[Multi-Stream][Medium]The
+                            virtual participant should not be shown in chat-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>172</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338905?projectId=20568">[Multi-Stream][Medium]The
+                            virtual participant should be shown in NDI-participants list</a></td>
+                    </tr>
+                    <tr>
+                        <td>173</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338906?projectId=20568">[Multi-Stream][High]Multi-Stream
+                            will work well in E2E meeting/webinar meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>174</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338907?projectId=20568">[Multi-Stream][Medium]The
+                            virtual participant should not be shown in left-participants list in E2E meeting</a></td>
+                    </tr>
+                    <tr>
+                        <td>175</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338908?projectId=20568">[Multi-Stream][High]Should
+                            control other's camera or control by others successfully in multi-stream mode</a></td>
+                    </tr>
+                    <tr>
+                        <td>176</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338909?projectId=20568">[Multi-Stream][High]Check
+                            the videos and participants after setting the "Maximum Stream Count"</a></td>
+                    </tr>
+                    <tr>
+                        <td>177</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11338910?projectId=20568">[Multi-Stream][Medium]Watermark
+                            should show correct in multi-screen mode</a></td>
+                    </tr>
+                    <tr>
+                        <td>178</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363828?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]ZR shows "Guest Name" in Google Meet meeting as specificed in Web
+                            Settings</a></td>
+                    </tr>
+                    <tr>
+                        <td>179</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363829?projectId=20568">[TBA][DGJ
+                            - Google meet web[High]ZRC can send "Send Problem Report" if user encounters issue with the
+                            device</a></td>
+                    </tr>
+                    <tr>
+                        <td>180</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363830?projectId=20568">[M][DGJ
+                            - Google meet web][High]If more than six people join Google Meet meeting and it lasts longer
+                            than 22 hours, ZR should not automatically end meeting prematurely</a></td>
+                    </tr>
+                    <tr>
+                        <td>181</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363831?projectId=20568">[M][DGJ
+                            - Google meet web][High]There is a maximum limit of 24 hours of continous Google Meet
+                            session.
+                            ZR should exit the Google Meet meeting gracefully after 24 hours.</a></td>
+                    </tr>
+                    <tr>
+                        <td>182</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363832?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]ZR can show upcoming meeting alert.</a></td>
+                    </tr>
+                    <tr>
+                        <td>183</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363833?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]ZR can join a Zoom Meeting right after a Google Meet meeting
+                            seamlessly</a></td>
+                    </tr>
+                    <tr>
+                        <td>184</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363834?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]ZR should display notification sent by Google Meet Host, such as the
+                            ZR
+                            is being removed from an active meeting.</a></td>
+                    </tr>
+                    <tr>
+                        <td>185</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363835?projectId=20568">[TBA][DGJ
+                            - Google meet web][High]ZR should display chat notification if host send chat message to
+                            everyone</a></td>
+                    </tr>
+                    <tr>
+                        <td>186</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363837?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]ZR shows "Guest Name" in Teams meeting as specificed in Web
+                            Settings</a></td>
+                    </tr>
+                    <tr>
+                        <td>187</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363838?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]ZRC can send "Send Problem Report" if user encounters issue with
+                            the
+                            device</a></td>
+                    </tr>
+                    <tr>
+                        <td>188</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363839?projectId=20568">[M][DGJ
+                            - Teams web client][High]If more than six people join Teams meeting and it lasts longer than
+                            28
+                            hours, ZR should not automatically end meeting prematurely</a></td>
+                    </tr>
+                    <tr>
+                        <td>189</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363840?projectId=20568">[M][DGJ
+                            - Teams web client][High]There is a maximum limit of 30 hours of continous Teams session. ZR
+                            should exit the Teams meeting gracefully after 30 hours</a></td>
+                    </tr>
+                    <tr>
+                        <td>190</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363841?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]ZR can show upcoming meeting alert</a></td>
+                    </tr>
+                    <tr>
+                        <td>191</td>
+                        <td>Gandalf</td>
+                        <td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11363842?projectId=20568">[TBA][DGJ
+                            - Teams web client][High]ZR can join a Zoom Meeting right after a Teams meeting
+                            seamlessly</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="current-automated-case-detail">
+    <table style="width:100%" border="1">
+        <tr>
+            <th>ZR Firmware Self Test Reports (Android)_3.5 - 07/29/2024 - Total: 191 - Automated: 8 - Automation
+                Coverage:
+                4.19%
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <table style="width:100%" border="1">
+                    <tr>
+                        <th>index</th>
+                        <th>project</th>
+                        <th>case_name</th>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    window.onload = filterCurrentRoundAutomatedCases();
+
+    function filterCurrentRoundAutomatedCases()  {
+        var filterCheckbox = document.getElementById('filterCheckbox');
+        var table_all = document.getElementById('all-case-detail');
+        var table_automated = document.getElementById('current-automated-case-detail');
+        if (filterCheckbox.checked) {
+            table_automated.style.display = 'block';
+            table_all.style.display = 'none';
+            return;
+        }
+        table_automated.style.display = 'none';
+        table_all.style.display = 'block';
+    }
+
+    function goBack() {
+        const url = new URL(window.location.href);
+        const backUrl = url.searchParams.get('backUrl');
+        if ("" == backUrl || null == backUrl) {
+            return;
+        }
+        window.location.href = "../../.." + backUrl;
+    }
+</script>
+</body>
+</html>

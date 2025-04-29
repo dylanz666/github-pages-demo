@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Case Detail</title>
+    <style>
+        .lightgreen {
+            background-color: lightgreen;
+        }
+        .back-button {
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background-color: #3498db;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+          background-color: #2980b9;
+        }
+        .icon {
+          margin-right: 5px;
+        }
+        .container {
+          display: flex;
+          justify-content: space-between;
+        }
+        /* 外部容器样式 */
+        .checkbox-container {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+        }
+
+        /* 隐藏原生复选框 */
+        .checkbox-container input[type="checkbox"] {
+          display: none;
+        }
+
+        /* 自定义复选框样式 */
+        .custom-checkbox {
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          border: 2px solid #3498db;
+          border-radius: 3px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* 复选框选中样式 */
+        .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+          background-color: #3498db;
+        }
+
+        /* 复选框内部图标样式 */
+        .custom-checkbox::after {
+          content: "\2713";
+          font-size: 16px;
+          color: white;
+          display: none;
+        }
+
+        /* 复选框选中后内部图标显示 */
+        .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+          display: block;
+        }
+
+        .right-align {
+          text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <a href="#" class="back-button" onclick="goBack()">
+            <i class="icon fas fa-arrow-left"></i>
+            Back
+        </a>
+    </div>
+    <div>
+        <label class="checkbox-container" onclick="filterCurrentRoundAutomatedCases()">
+            <input type="checkbox" id="filterCheckbox">
+            <span class="custom-checkbox"></span>
+            <span>Automated By Current Round</span>
+        </label>
+    </div>
+</div>
+
+<div id="all-case-detail"><table style="width:100%" border="1"><tr><th>IEEE Ethernet 802.1X - 11/25/2024 - Total: 32 - Automated: 0 - Automation Coverage: 0%</th></tr><tr><td><table style="width:100%" border="1"><tr><th>index</th><th>project</th><th>case_name</th></tr><tr><td>1</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11457766?projectId=20568">[VB]Configure/disable 802.1x Ethernet authentication</a></td></tr><tr><td>2</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452884?projectId=20568">[VB]Configure Ethernet 802.1x when ethernet cable is unplugged and then connect DUT to a regular network</a></td></tr><tr><td>3</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452885?projectId=20568">[VB]Configure Ethernet 802.1x when ethernet cable is unplugged and then connect DUT to a network with 802.1x authentication</a></td></tr><tr><td>4</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452886?projectId=20568">[VB]Configure Ethernet 802.1x when ethernet cable is plugged in the regular network</a></td></tr><tr><td>5</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452887?projectId=20568">[VB]Configure Ethernet 802.1x when ethernet cable is plugged in the network with 802.1x authentication</a></td></tr><tr><td>6</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452888?projectId=20568">[VB]Verify that DUT can establish network connection normally after unplugging/plugging ethernet cable in the network with 802.1x authentication.</a></td></tr><tr><td>7</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452889?projectId=20568">[VB]Verify that DUT can establish network connection normally after switching from a regular network to a network with 802.1x authentication</a></td></tr><tr><td>8</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452890?projectId=20568">[VB]Verify that DUT can establish network connection normally after switching from a network with 802.1x authentication to a regular network</a></td></tr><tr><td>9</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452891?projectId=20568">[VB]Verify Ethernet 802.1x configuration is retained after reboot</a></td></tr><tr><td>10</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452892?projectId=20568">[VB]Verify Ethernet 802.1x configuration is retained after firmware upgrade</a></td></tr><tr><td>11</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452893?projectId=20568">[VB]Verify Ethernet 802.1x configurations should be cleared after factory reset</a></td></tr><tr><td>12</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452894?projectId=20568">[VB]Configure Ethernet 802.1x with wrong username/password</a></td></tr><tr><td>13</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460953?projectId=20568">[TC]Configure/disable 802.1x Ethernet authentication</a></td></tr><tr><td>14</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460954?projectId=20568">[TC]Configure Ethernet 802.1x when ethernet cable is unplugged and then connect DUT to a regular network</a></td></tr><tr><td>15</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460955?projectId=20568">[TC]Configure Ethernet 802.1x when ethernet cable is unplugged and then connect DUT to a network with 802.1x authentication</a></td></tr><tr><td>16</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460956?projectId=20568">[TC]Configure Ethernet 802.1x when ethernet cable is plugged in the regular network</a></td></tr><tr><td>17</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460957?projectId=20568">[TC]Configure Ethernet 802.1x when ethernet cable is plugged in the network with 802.1x authentication</a></td></tr><tr><td>18</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460958?projectId=20568">[TC]Verify that DUT can establish network connection normally after unplugging/plugging ethernet cable in the network with 802.1x authentication.</a></td></tr><tr><td>19</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460959?projectId=20568">[TC]Verify that DUT can establish network connection normally after switching from a regular network to a network with 802.1x authentication</a></td></tr><tr><td>20</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460960?projectId=20568">[TC]Verify that DUT can establish network connection normally after switching from a network with 802.1x authentication to a regular network</a></td></tr><tr><td>21</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460961?projectId=20568">[TC]Verify Ethernet 802.1x configuration is retained after reboot</a></td></tr><tr><td>22</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460962?projectId=20568">[TC]Verify Ethernet 802.1x configuration is retained after firmware upgrade</a></td></tr><tr><td>23</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460963?projectId=20568">[TC]Verify Ethernet 802.1x configurations should be cleared after factory reset</a></td></tr><tr><td>24</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460964?projectId=20568">[TC]Configure Ethernet 802.1x with wrong username/password</a></td></tr><tr><td>25</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452996?projectId=20568">[VB&TC]Configure/Disable VB's Ethernet 802.1x from VB in the regular network when VB and TC are paired</a></td></tr><tr><td>26</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452997?projectId=20568">[VB&TC]Configure/Disable TC’s Ethernet 802.1x from VB in the regular network when VB and TC are paired</a></td></tr><tr><td>27</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452998?projectId=20568">[VB&TC]Configure/Disable VB’s Ethernet 802.1x from TC in the regular network when VB and TC are paired</a></td></tr><tr><td>28</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11452999?projectId=20568">[VB&TC]Configure/Disable TC’s Ethernet 802.1x from TC in the regular network when VB and TC are paired</a></td></tr><tr><td>29</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11453000?projectId=20568">[VB&TC]Verify VB and TC can be re-connected after unplugging/plugging ethernet cable in the network with 802.1x authentication</a></td></tr><tr><td>30</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11453001?projectId=20568">[VB&TC]Verify VB and TC can be re-connected after switching DUT from a regular network to a network with 802.1x authentication</a></td></tr><tr><td>31</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11453002?projectId=20568">[VB&TC]Verify VB and TC can be re-connected after switching DUT from a network with 802.1x authentication to a regular network</a></td></tr><tr><td>32</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11460471?projectId=20568">[VB&TC]Configure Ethernet 802.1x with wrong username/password</a></td></tr></table></td></tr></table></div><div id="current-automated-case-detail"><table style="width:100%" border="1"><tr><th>IEEE Ethernet 802.1X - 11/25/2024 - Total: 32 - Automated: 0 - Automation Coverage: 0%</th></tr><tr><td><ul></ul></td></tr></table></div>
+
+<script>
+    window.onload = filterCurrentRoundAutomatedCases();
+
+    function filterCurrentRoundAutomatedCases()  {
+        var filterCheckbox = document.getElementById('filterCheckbox');
+        var table_all = document.getElementById('all-case-detail');
+        var table_automated = document.getElementById('current-automated-case-detail');
+        console.log(table_all);
+        console.log(table_automated);
+        if (filterCheckbox.checked) {
+            table_automated.style.display = 'block';
+            table_all.style.display = 'none';
+            return;
+        }
+        table_automated.style.display = 'none';
+        table_all.style.display = 'block';
+    }
+
+    function goBack() {
+        const url = new URL(window.location.href);
+        const backUrl = url.searchParams.get('backUrl');
+        if ("" == backUrl || null == backUrl) {
+            return;
+        }
+        window.location.href = "../../.." + backUrl;
+    }
+</script>
+</body>
+</html>

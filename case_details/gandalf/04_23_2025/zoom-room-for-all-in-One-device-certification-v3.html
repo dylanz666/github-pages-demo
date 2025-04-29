@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Case Detail</title>
+    <style>
+        .lightgreen {
+            background-color: lightgreen;
+        }
+        .back-button {
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 20px;
+          background-color: #3498db;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+          transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+          background-color: #2980b9;
+        }
+        .icon {
+          margin-right: 5px;
+        }
+        .container {
+          display: flex;
+          justify-content: space-between;
+        }
+        /* 外部容器样式 */
+        .checkbox-container {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+        }
+
+        /* 隐藏原生复选框 */
+        .checkbox-container input[type="checkbox"] {
+          display: none;
+        }
+
+        /* 自定义复选框样式 */
+        .custom-checkbox {
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          border: 2px solid #3498db;
+          border-radius: 3px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* 复选框选中样式 */
+        .checkbox-container input[type="checkbox"]:checked + .custom-checkbox {
+          background-color: #3498db;
+        }
+
+        /* 复选框内部图标样式 */
+        .custom-checkbox::after {
+          content: "\2713";
+          font-size: 16px;
+          color: white;
+          display: none;
+        }
+
+        /* 复选框选中后内部图标显示 */
+        .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+          display: block;
+        }
+
+        .right-align {
+          text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <a href="#" class="back-button" onclick="goBack()">
+            <i class="icon fas fa-arrow-left"></i>
+            Back
+        </a>
+    </div>
+    <div>
+        <label class="checkbox-container" onclick="filterCurrentRoundAutomatedCases()">
+            <input type="checkbox" id="filterCheckbox">
+            <span class="custom-checkbox"></span>
+            <span>Automated By Current Round</span>
+        </label>
+    </div>
+</div>
+
+<div id="all-case-detail"><table style="width:100%" border="1"><tr><th>Zoom Room for All-in-One device Certification v3 - 04/23/2025 - Total: 97 - Automated: 1 - Automation Coverage: 1.03%</th></tr><tr><td><table style="width:100%" border="1"><tr><th>index</th><th>project</th><th>case_name</th></tr><tr><td>1</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9872294?projectId=20568">[OOBE] Connect DUT to local network which cannot access to internet during installation</a></td></tr><tr><td>2</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9871648?projectId=20568">[OOBE] Power cycle DUT during installation</a></td></tr><tr><td>3</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9872454?projectId=20568">[OOBE] Disconnect and reconnect VB to the network during installation</a></td></tr><tr><td>4</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9874375?projectId=20568">[OOBE] OOBE with ZRT</a></td></tr><tr><td>5</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9596885?projectId=20568">[Speakerphone test] Speaker volume</a></td></tr><tr><td>6</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9868160?projectId=20568">[Speakerphone test] Speaker volume status sync</a></td></tr><tr><td>7</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9596886?projectId=20568">[Speakerphone test] Microphone volume</a></td></tr><tr><td>8</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9597126?projectId=20568">[Camera test] Camera Preview Video Quality Test</a></td></tr><tr><td>9</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9597127?projectId=20568">[Camera test] Far-end Video Quality and Camera Function Test</a></td></tr><tr><td>10</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9656891?projectId=20568">[Local Sharing] Local Sharing using Sharing Key with Windows OS</a></td></tr><tr><td>11</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9657136?projectId=20568">[Local Sharing] Local Sharing using Sharing Key with Mac OS</a></td></tr><tr><td>12</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9597230?projectId=20568">[Local Sharing][TBC] Local Sharing using ultrasound proximity function with Windows OS</a></td></tr><tr><td>13</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9656835?projectId=20568">[Local Sharing] Local Sharing using ultrasound proximity function with Mac OS</a></td></tr><tr><td>14</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9868719?projectId=20568">[Local Sharing]Local Sharing based on the different range of ultrasound proximity detection by PC</a></td></tr><tr><td>15</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9597245?projectId=20568">[Remote Sharing][TBC] Remote Sharing with Windows OS</a></td></tr><tr><td>16</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9869856?projectId=20568">[Remote Sharing][TBC] Remote Sharing with Mac OS</a></td></tr><tr><td>17</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9870330?projectId=20568">[Remote Sharing]Remote Sharing based on the different range of ultrasound proximity detection by PC</a></td></tr><tr><td>18</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9621378?projectId=20568">[A][R][HDMI Share Automatically] HDMI Share Automatically in local with Windows OS</a></td></tr><tr><td>19</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9621379?projectId=20568">[HDMI Share Automatically] HDMI Share Automatically in a meeting with Windows OS</a></td></tr><tr><td>20</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9657540?projectId=20568">[HDMI Share Automatically] HDMI Share Automatically in local with Mac OS</a></td></tr><tr><td>21</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9657545?projectId=20568">[HDMI Share Automatically] HDMI Share Automatically in a meeting with Mac OS</a></td></tr><tr><td>22</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9862581?projectId=20568">[HDMI Share Automatically] HDMI Share Automatically in local with Chromebook OS</a></td></tr><tr><td>23</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9863362?projectId=20568">[HDMI Share Automatically] HDMI Share Automatically in a meeting with Chromebook OS</a></td></tr><tr><td>24</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9621490?projectId=20568">[HDMI Share Manually] HDMI Share Manually in local with Windows OS</a></td></tr><tr><td>25</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9621491?projectId=20568">[HDMI Share Manually] HDMI Share Manually in a meeting with Windows OS</a></td></tr><tr><td>26</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9621492?projectId=20568">[HDMI Share Manually] HDMI Share Manually in local with Mac OS</a></td></tr><tr><td>27</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9621493?projectId=20568">[HDMI Share Manually] HDMI Share Manually in a meeting with  Mac OS</a></td></tr><tr><td>28</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9862361?projectId=20568">[HDMI Share Manually] HDMI Share Manually in local with Chromebook OS</a></td></tr><tr><td>29</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9862382?projectId=20568">[HDMI Share Manually] HDMI Share Manually in a meeting with Chromebook OS</a></td></tr><tr><td>30</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10545274?projectId=20568">[HDMI Share Manually] HDMI cable Disconnect and Connect</a></td></tr><tr><td>31</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9601211?projectId=20568">[Touch Function/Whiteboard]Check the Zoom Whiteboard</a></td></tr><tr><td>32</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9622296?projectId=20568">[Standard Center Layout]Check the Digital Signage content</a></td></tr><tr><td>33</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9622306?projectId=20568">[Video+Content Layout]Check the Digital Signage content</a></td></tr><tr><td>34</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11425345?projectId=20568">[BYOD] Bring Your Own Device (BYOD) (if DUT supports)</a></td></tr><tr><td>35</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9619057?projectId=20568">[Calendar Synchronization][TBC] Synchronize calendar from Cloud to DUT</a></td></tr><tr><td>36</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9619058?projectId=20568">[TBA][Meetings] Status sync and HID function in DUT idle</a></td></tr><tr><td>37</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9619059?projectId=20568">[TBA][Meetings] Status sync and HID function in Pre-meeting</a></td></tr><tr><td>38</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9619060?projectId=20568">[Meetings]Status sync and HID function In-meeting</a></td></tr><tr><td>39</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628205?projectId=20568">[Phone call] Status sync and HID function in a Zoom phone call</a></td></tr><tr><td>40</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9622254?projectId=20568">[Outgoing Call] DUT dials out to a Extension number user</a></td></tr><tr><td>41</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628237?projectId=20568">[Outgoing Call] DUT dials out to a Direct Number user</a></td></tr><tr><td>42</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628235?projectId=20568">[Outgoing Call] DUT dials out to a PSTN user</a></td></tr><tr><td>43</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9622257?projectId=20568">[Incoming Call] DUT answers the Zoom phone call</a></td></tr><tr><td>44</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628217?projectId=20568">[Incoming Call] DUT answers the call from  PSTN user</a></td></tr><tr><td>45</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628761?projectId=20568">[Real-time People Count] Show the people detection
+indication on the Zoom Rooms when not in a meeting</a></td></tr><tr><td>46</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10328692?projectId=20568">[Real-time People Count] Refresh real-time people from Zoom web portal</a></td></tr><tr><td>47</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628762?projectId=20568">[Real-time People Count]Display people count on the Scheduling Display</a></td></tr><tr><td>48</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628763?projectId=20568">[Real-time People Count] Detect people count only in the meeting</a></td></tr><tr><td>49</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9612087?projectId=20568">[Display sensor data][TBC]Display sensor data</a></td></tr><tr><td>50</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9612482?projectId=20568">[Voice Command] Trigger Voice command in a pre-meeting state with ZRT (Not paired with a ZRC)</a></td></tr><tr><td>51</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628439?projectId=20568">[Voice Command]Start a instant meeting with ZRT (Not paired with a ZRC)</a></td></tr><tr><td>52</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9628755?projectId=20568">[Voice Command]Toggling voice commands on or off from ZRT (Not paired with a ZRC)</a></td></tr><tr><td>53</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9629193?projectId=20568">[Voice Command] Toggling voice commands on or off from ZRC (ZRC has no built-in microphone)</a></td></tr><tr><td>54</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9629192?projectId=20568">[Voice Command] Start a instant meeting with ZRC (ZRC has no built-in microphone)</a></td></tr><tr><td>55</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9629191?projectId=20568">[Voice Command] Trigger Voice commands in a pre-meeting state with ZRC (ZRC has no built-in microphone)</a></td></tr><tr><td>56</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9597497?projectId=20568">[Direct Guest Join Teams meeting] Direct Guest Join Teams meeting via Teams web client</a></td></tr><tr><td>57</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628396?projectId=20568">[System Management] Change language</a></td></tr><tr><td>58</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628397?projectId=20568">[System Management] Change Time Zone</a></td></tr><tr><td>59</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628398?projectId=20568">[System Management] Change Time format</a></td></tr><tr><td>60</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628399?projectId=20568">[System Management] Change Time Sever(NTP)</a></td></tr><tr><td>61</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628400?projectId=20568">[System Management] Check Network status</a></td></tr><tr><td>62</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628401?projectId=20568">[System Management] System Reset(Factory reset)</a></td></tr><tr><td>63</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628402?projectId=20568">[System Management] Custom configuration reset</a></td></tr><tr><td>64</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628403?projectId=20568">[System Management] System restart</a></td></tr><tr><td>65</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10628404?projectId=20568">[System Management] About(System information)</a></td></tr><tr><td>66</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10455010?projectId=20568">[AirPlay] Check user can share content by Airplay</a></td></tr><tr><td>67</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10604138?projectId=20568">[Sign-in] User to sign-out VB  from existing account  on VB and sign-in with a different account</a></td></tr><tr><td>68</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10312293?projectId=20568">Check enrolled DUT will auto-sign room after assign room activation code to DUT</a></td></tr><tr><td>69</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9601120?projectId=20568">[DUT System Performance Test] Direct share Excel spreadsheets</a></td></tr><tr><td>70</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/9601125?projectId=20568">[DUT System Performance Test] Direct share YouTube full screen video</a></td></tr><tr><td>71</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554564?projectId=20568">Check ZDM icon will display below the ZRC logo</a></td></tr><tr><td>72</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554566?projectId=20568">Check ZRC's ID/name in Zoom portal</a></td></tr><tr><td>73</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554568?projectId=20568">Check room name will display below the ZRC name</a></td></tr><tr><td>74</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554570?projectId=20568">Check ZRC's serial number will display</a></td></tr><tr><td>75</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554572?projectId=20568">Check ZRC's Zoom Rooms Version in Zoom portal</a></td></tr><tr><td>76</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554574?projectId=20568">Check ZRC OS Version in Zoom portal</a></td></tr><tr><td>77</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554576?projectId=20568">Check ZRC's Room status in Zoom portal</a></td></tr><tr><td>78</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10554578?projectId=20568">Check ZRC IP address in Zoom portal</a></td></tr><tr><td>79</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092700?projectId=20568">Check upgrade DUT Zoom App from Zoom portal</a></td></tr><tr><td>80</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092701?projectId=20568">Check upgrade DUT Zoom app from VB(PZR)</a></td></tr><tr><td>81</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092702?projectId=20568">Check DUT will start upgrade Zoom app after end meeting</a></td></tr><tr><td>82</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092703?projectId=20568">Check update Zoom Rooms App should be silent</a></td></tr><tr><td>83</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092704?projectId=20568">Check DUT's Zoom app will be upgrade when there are no schedule meeting within 15 mins</a></td></tr><tr><td>84</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092705?projectId=20568">Check DUT firmware when upgrade Zoom App</a></td></tr><tr><td>85</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092699?projectId=20568">Check DUT will start upgrade firmware after end meeting</a></td></tr><tr><td>86</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092697?projectId=20568">Check upgrade DUT firmware from Zoom portal</a></td></tr><tr><td>87</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092698?projectId=20568">Check upgrade DUT firmware from VB（PZR）</a></td></tr><tr><td>88</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11096018?projectId=20568">Check enrolled DUT will auto-sign room after assign room activation code to DUT when Device is not power on</a></td></tr><tr><td>89</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/11096481?projectId=20568">Assign To Room from Device list when Device power off</a></td></tr><tr><td>90</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092695?projectId=20568">Check ZDM Client Start</a></td></tr><tr><td>91</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092706?projectId=20568">Reassign Room</a></td></tr><tr><td>92</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092708?projectId=20568">Download log in Zoom portal</a></td></tr><tr><td>93</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10092707?projectId=20568">Check can reboot DUT from Zoom portal</a></td></tr><tr><td>94</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10767762?projectId=20568">Set Proxy</a></td></tr><tr><td>95</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10589092?projectId=20568">Rename Room name on ZDM</a></td></tr><tr><td>96</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10589093?projectId=20568">Rename Device name on ZDM</a></td></tr><tr><td>97</td><td>Gandalf</td><td><a target="blank" href="https://jabra.jamacloud.com/perspective.req#/testCases/10589094?projectId=20568">Add Room Location</a></td></tr></table></td></tr></table></div><div id="current-automated-case-detail"><table style="width:100%" border="1"><tr><th>Zoom Room for All-in-One device Certification v3 - 04/23/2025 - Total: 97 - Automated: 1 - Automation Coverage: 1.03%</th></tr><tr><td><ul></ul></td></tr></table></div>
+
+<script>
+    window.onload = filterCurrentRoundAutomatedCases();
+
+    function filterCurrentRoundAutomatedCases()  {
+        var filterCheckbox = document.getElementById('filterCheckbox');
+        var table_all = document.getElementById('all-case-detail');
+        var table_automated = document.getElementById('current-automated-case-detail');
+        console.log(table_all);
+        console.log(table_automated);
+        if (filterCheckbox.checked) {
+            table_automated.style.display = 'block';
+            table_all.style.display = 'none';
+            return;
+        }
+        table_automated.style.display = 'none';
+        table_all.style.display = 'block';
+    }
+
+    function goBack() {
+        const url = new URL(window.location.href);
+        const backUrl = url.searchParams.get('backUrl');
+        if ("" == backUrl || null == backUrl) {
+            return;
+        }
+        window.location.href = "../../.." + backUrl;
+    }
+</script>
+</body>
+</html>
