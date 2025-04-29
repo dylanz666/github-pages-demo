@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkdebug_bridge_client_tasty"]=self["webpackChunkdebug_bridge_client_tasty"]||[]).push([[521],{7521:function(e,t,n){n.r(t),n.d(t,{default:function(){return i}});n(4114);var u=n(6768),a=n(1387),r=(0,u.pM)({__name:"LattePage",setup(e){const t=(0,a.rd)();return(0,u.KC)((async()=>{await t.push("/auto-overview/index.html")})),(e,t)=>((0,u.uX)(),(0,u.CE)("div"))}});const s=r;var i=s}}]);
-//# sourceMappingURL=521.d7535a99.js.map
